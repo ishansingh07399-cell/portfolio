@@ -10,7 +10,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -23,32 +28,129 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        header {
+            position: fixed;
+            /* Keeps the nav at the top while scrolling */
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
         nav {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            height: 80px;
-            background-color: rgb(32, 32, 108);
+            height: 70px;
+            background: rgba(10, 10, 30, 0.7);
+            /* Deep translucent blue */
+            backdrop-filter: blur(15px);
+            /* The "Glass" effect */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .left {
+            font-size: 1.6rem;
+            font-weight: 700;
+            cursor: default;
+        }
+
+        .logo-i {
+            color: rgb(39, 209, 79);
+            /* Your signature green */
+        }
+
+        .purple {
+            color: rgb(132, 29, 228);
+            text-shadow: 0 0 10px rgba(132, 29, 228, 0.5);
+            /* Subtle glow */
         }
 
         nav ul {
             display: flex;
-            justify-content: center
+            align-items: center;
+            list-style: none;
         }
 
         nav ul li {
-            list-style: none;
-            margin: 0 23px;
+            margin: 0 20px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: rgb(220, 214, 214);
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            font-weight: 400;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        /* Animated Underline Effect */
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: rgb(39, 209, 79);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
         }
 
         nav ul li a:hover {
             color: rgb(39, 209, 79);
-            font-size: 1.05rem;
+        }
+
+        /* The "Contact Me" Button Style */
+        .nav-btn {
+            background: rgba(132, 29, 228, 0.2);
+            border: 1px solid rgb(132, 29, 228);
+            padding: 8px 18px;
+            border-radius: 20px;
+            transition: all 0.3s ease !important;
+        }
+
+        .footer-rights
+        {
+         font-size:20px;
+        }
+
+        .nav-btn:hover {
+            background: rgb(132, 29, 228);
+            color: white !important;
+            box-shadow: 0 0 15px rgba(132, 29, 228, 0.4);
+        }
+
+        /* Responsive adjustment for the hero section since header is now fixed */
+        .firstSection {
+            margin-top: 150px;
+            /* Prevents text from hiding under the fixed nav */
+        }
+
+
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* Keeps it behind your content */
+            background-color: #000000;
+            /* Matches your body color */
+        }
+
+        /* Ensure your main content has a relative position to stay above particles */
+        main,
+        header,
+        footer {
+            position: relative;
+            z-index: 1;
         }
 
         main hr {
@@ -84,10 +186,10 @@
         }
 
         .leftSection .btns {
-           padding: 15px;
-           background-color: rgb(132, 29, 228);
-           font-size:20px;
-           margin-top:20px;
+            padding: 15px;
+            background-color: rgb(132, 29, 228);
+            font-size: 20px;
+            margin-top: 20px;
         }
 
         .rightSection img {
@@ -95,89 +197,280 @@
             margin: 50px 0px
         }
 
-        .purple {
-            color: blueviolet
-        }
-
-        #element {
-            color: blueviolet
-        }
-
         .secondSection {
             max-width: 80vw;
-            height: 80vh;
-        }
-
-        .secondSection h1 {
-            font-size: 1.75rem;
-        }
-
-        .secondSection .box {
-            background: lavenderblush;
-            width: 70vw;
-            height: 2px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .secondSection .vertical {
-            height: 33px;
-            width: 1px;
-            background-color: whitesmoke;
-            margin: 0 250px;
-        }
-
-        .image-top {
-            width: 23px;
-            position: relative;
-            top: -20px;
-            left: -10px;
+            margin: auto;
+            padding: 50px 0;
         }
 
         #exp {
-            margin-bottom: 50px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Timeline main line */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        /* Container */
+        .container {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        /* Left side */
+        .container.left {
+            left: 0;
+        }
+
+        /* Right side */
+        .container.right {
+            left: 50%;
+        }
+
+        /* Circle */
+        /* Improved Circle Styling */
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            /* Matches body background */
+            border: 3px solid rgb(39, 209, 79);
+            /* Matches your hover green or use white */
+            border-radius: 50%;
+            top: 25px;
+            z-index: 2;
+            transition: all 0.3s ease;
+
+            /* Perfect centering logic */
+            right: -13px;
+            /* (Width / 2) + border thickness */
+        }
+
+        .container.right::after {
+            left: -13px;
+        }
+
+        /* Add a hover effect to the circles */
+        .container:hover::after {
+            background-color: rgb(39, 209, 79);
+            box-shadow: 0 0 10px rgb(39, 209, 79);
+            transform: scale(1.2);
+        }
+
+        .timeline::after {
+            background: linear-gradient(to bottom, transparent, white, transparent);
+            width: 2px;
+        }
+
+        /* Content box */
+        .content {
+            background: rgba(32, 32, 108, 0.4);
+            /* Transparent blue */
+            backdrop-filter: blur(10px);
+            /* Blurs what's behind it */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive (mobile) */
+        @media (max-width: 768px) {
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .container {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 25px;
+            }
+
+            .container.right {
+                left: 0;
+            }
+
+            .container::after {
+                left: 12px;
+            }
+        }
+
+        .skillsSection {
+            padding: 40px 0;
+            background-color: rgb(10, 10, 30);
+            /* Slightly different from body for depth */
+            overflow: hidden;
+        }
+
+        .skillsSection h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgb(39, 209, 79);
+            /* That nice green from your hover */
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .marquee {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            mask-image: linear-gradient(to right,
+                    hsl(0 0% 0% / 0),
+                    hsl(0 0% 0% / 1) 10%,
+                    hsl(0 0% 0% / 1) 90%,
+                    hsl(0 0% 0% / 0));
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 100px;
+            /* Increased gap for fewer icons */
+            animation: scroll 15s linear infinite;
+            /* Faster speed (15s) since there's less distance */
+        }
+
+        .marquee-content i {
+            font-size: 65px;
+            /* Slightly larger icons to fill the space */
+            color: #dfd1d1;
+            transition: all 0.3s ease;
+        }
+
+        .devicon-cplusplus-plain {
+            color: rgb(132, 29, 228) !important;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            /* We move exactly half the width of the content div */
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        /* The Animation Loop */
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause on hover so people can see specific icons */
+        .marquee:hover .marquee-content {
+            animation-play-state: paused;
         }
 
         footer {
-            background-color: rgb(32, 32, 108);
+            background-color: rgba(32, 32, 108, 0.8);
+            /* Semi-transparent blue */
+            backdrop-filter: blur(10px);
+            /* Blurs the particles behind it */
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
         }
 
         .footer {
             display: flex;
-            padding: 23px 122px;
-            justify-content: space-evenly;
+            padding: 60px 10%;
+            /* More vertical breathing room */
+            justify-content: space-between;
+            flex-wrap: wrap;
+            /* Good for mobile */
         }
 
-        .footer ul
-        {
-          list-style:none;
+        .footer>div {
+            width: 250px;
+            margin-bottom: 20px;
         }
 
-        .footer > div{
-            width:223px;
-        } 
-
-        footer .footer-rights{
-            text-align:center;
-            color:gray;
-            padding:12px;
-
+        .footer-first h3 {
+            color: rgb(39, 209, 79);
+            /* Your theme green */
+            margin-bottom: 15px;
         }
 
+        .footer-first p {
+            font-size: 0.9rem;
+            color: #dfd1d1;
+            line-height: 1.5;
+        }
+
+        .footer h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul li a {
+            text-decoration: none;
+            color: gray;
+            transition: 0.3s;
+        }
+
+        .footer ul li a:hover {
+            color: rgb(39, 209, 79);
+            padding-left: 5px;
+            /* Subtle movement on hover */
+        }
+
+        .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 20px;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
     </style>
 </head>
 
 <body>
+    <div id="particles-js"></div>
     <header>
         <nav>
-            <div class="left">Ishan's Portfolio</div>
+            <div class="left">
+                <span class="logo-i">I</span>shan<span class="purple">.dev</span>
+            </div>
             <div class="right">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Projects</a></li>
-                    <li><a href="/">Contact Me</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact" class="nav-btn">Contact Me</a></li>
                 </ul>
             </div>
         </nav>
@@ -198,37 +491,45 @@
                 <img src="—Pngtree—web developer isometric illustration_6067558.png" alt="" id="img1">
             </div>
         </section>
+        <section class="skillsSection">
+            <h2>My Tech Stack</h2>
+            <div class="marquee">
+                <div class="marquee-content">
+                    <i class="devicon-html5-plain"></i>
+                    <i class="devicon-css3-plain"></i>
+                    <i class="devicon-javascript-plain"></i>
+                    <i class="devicon-cplusplus-plain"></i>
+                    <i class="devicon-html5-plain"></i>
+                    <i class="devicon-css3-plain"></i>
+                    <i class="devicon-javascript-plain"></i>
+                    <i class="devicon-cplusplus-plain"></i>
+                </div>
+            </div>
+        </section>
         <hr>
         <section class="secondSection">
-            <span class="gray">What I have done so far?</span>
             <h1 id="exp">Work Experience</h1>
 
-            <div class="box">
-                <div class="vertical">
-                    <img class="image-top" src="dev4.png" alt="">
-                    <div class="vertical-title">
-                        HTML Developer(2010-2012)
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quas?
+            <div class="timeline">
+
+                <div class="container left">
+                    <div class="content">
+                        <h3>HTML Developer (2010–2012)</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="dev4.png" alt="">
-                    <div class="vertical-title">
-                        Nodejs Developer(2012-2014)
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quas?
+
+                <div class="container right">
+                    <div class="content">
+                        <h3>Node.js Developer (2012–2014)</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
-                <div class="vertical">
-                    <img class="image-top" src="dev4.png" alt="">
-                    <div class="vertical-title">
-                        Software Developer(2014-2018)
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quas?
+
+                <div class="container left">
+                    <div class="content">
+                        <h3>Software Developer (2014–2018)</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
 
@@ -238,37 +539,37 @@
     <footer>
         <div class="footer">
             <div class="footer-first">
-                <h3>Ishan's Developer's Portfolio</h3>
+                <h3>Ishan's Portfolio</h3>
+                <p>Building scalable web applications and solving complex algorithmic challenges.</p>
             </div>
+
             <div class="footer-second">
+                <h4>Quick Links</h4>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#exp">Experience</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Contact</a></li>
                 </ul>
             </div>
+
             <div class="footer-third">
-                   <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://github.com">GitHub</a></li>
+                    <li><a href="https://linkedin.com">LinkedIn</a></li>
+                    <li><a href="https://leetcode.com">LeetCode</a></li>
+                    <li><a href="https://codeforces.com">Codeforces</a></li>
                 </ul>
             </div>
-            <div class="footer-fourth">
-                   <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
-                </ul>
-            </div>
-            </div>
-            <div class="footer-rights">
-                www.ishansportfolio.com|All rights reserved
-            </div>
+        </div>
+
+        <div class="footer-rights">
+            &copy; 2026 Ishan's Portfolio | Built with ❤️ and Code
+        </div>
     </footer>
+
+
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
     <!-- Setup and start animation! -->
     <script>
@@ -277,6 +578,9 @@
             typeSpeed: 50,
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </body>
 
 </html>
