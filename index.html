@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishan-Developer & CP Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: white;
+            /*text color*/
+            background-color: rgb(0, 0, 0);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(32, 32, 108);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(220, 214, 214);
+        }
+
+        nav ul li a:hover {
+            color: rgb(39, 209, 79);
+            font-size: 1.05rem;
+        }
+
+        main hr {
+            border: 0;
+            background: #dfd1d1;
+            height: 1.2px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #exp {
+            color: rgb(181, 181, 189);
+        }
+
+        .left {
+            font-size: 1.5rem;
+
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 130px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 2.0rem;
+        }
+
+        .leftSection .btns {
+           padding: 15px;
+           background-color: rgb(132, 29, 228);
+           font-size:20px;
+           margin-top:20px;
+        }
+
+        .rightSection img {
+            width: 80%;
+            margin: 50px 0px
+        }
+
+        .purple {
+            color: blueviolet
+        }
+
+        #element {
+            color: blueviolet
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            height: 80vh;
+        }
+
+        .secondSection h1 {
+            font-size: 1.75rem;
+        }
+
+        .secondSection .box {
+            background: lavenderblush;
+            width: 70vw;
+            height: 2px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .secondSection .vertical {
+            height: 33px;
+            width: 1px;
+            background-color: whitesmoke;
+            margin: 0 250px;
+        }
+
+        .image-top {
+            width: 23px;
+            position: relative;
+            top: -20px;
+            left: -10px;
+        }
+
+        #exp {
+            margin-bottom: 50px;
+        }
+
+        footer {
+            background-color: rgb(32, 32, 108);
+        }
+
+        .footer {
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul
+        {
+          list-style:none;
+        }
+
+        .footer > div{
+            width:223px;
+        } 
+
+        footer .footer-rights{
+            text-align:center;
+            color:gray;
+            padding:12px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Ishan's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="purple">Ishan</span>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btns">Download Resume</button>
+                    <button class="btns">Visit my Github</button>
+                </div>
+            </div>
+
+            <div class="rightSection">
+                <img src="—Pngtree—web developer isometric illustration_6067558.png" alt="" id="img1">
+            </div>
+        </section>
+        <hr>
+        <section class="secondSection">
+            <span class="gray">What I have done so far?</span>
+            <h1 id="exp">Work Experience</h1>
+
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="dev4.png" alt="">
+                    <div class="vertical-title">
+                        HTML Developer(2010-2012)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quas?
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="dev4.png" alt="">
+                    <div class="vertical-title">
+                        Nodejs Developer(2012-2014)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quas?
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="dev4.png" alt="">
+                    <div class="vertical-title">
+                        Software Developer(2014-2018)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quas?
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Ishan's Developer's Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                   <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                   <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            </div>
+            <div class="footer-rights">
+                www.ishansportfolio.com|All rights reserved
+            </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Competative Programmer', 'Student'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
