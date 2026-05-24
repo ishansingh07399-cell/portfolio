@@ -9,10 +9,10 @@ Experience the live website here: [https://portfolio-two-woad-17.vercel.app/](ht
 I am a software development student with a strong passion for frontend web development, algorithm optimization, and competitive programming. I enjoy building interactive web experiences and exploring modern frontend technologies, including integrating 3D backgrounds and interactive elements like Three.js and Particles.js.
 
 ### 🛠️ Tech Stack & Skills
-* **Programming Languages:** C, C++, JavaScript, MATLAB
-* **Web Development:** HTML5, CSS3, React.js
+* **Programming Languages:** C, C++
+* **Web Development:** HTML5, CSS3, React.js , Javascript
 * **Backend & APIs:** Firebase, Google Gemini API
-* **Core Concepts:** Data Structures & Algorithms (DSA), Digital Signal Processing (DSP), Electronic Circuit Analysis
+* **Core Concepts:** Data Structures & Algorithms (DSA)
 
 ## 🚀 Featured Projects Highlights
 *(Check out the live portfolio to see these and more!)*
