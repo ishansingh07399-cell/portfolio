@@ -16,8 +16,6 @@ I am a software development student with a strong passion for frontend web devel
 
 ## 🚀 Featured Projects Highlights
 *(Check out the live portfolio to see these and more!)*
-
-* **Krishi-mitra (Agro-Nxt):** An agriculture-focused application built for a hackathon. It features an AI Vision Scanner and a Voice Bot, developed utilizing React.js, the Google Gemini API, and Firebase.
 * **Mess Management System:** A collaborative web platform built with a team to manage daily/weekly hostel menus and facilitate student feedback through a dedicated portal.
 
 ## 🏆 Competitive Programming
